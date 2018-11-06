@@ -4,7 +4,15 @@ class Contact < ApplicationRecord
     "Jackson Pires"
   end
 
+  def kind_description
+    self.kind.description
+  end
+
   def as_json(options={})
-    super(methods: :author, root:true)
+    super(
+      root:true,
+      methods: %i(author kind_description),
+      include: { kind: { only: :description } }
+    )
   end
 end
