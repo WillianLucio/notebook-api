@@ -29,6 +29,8 @@ gem 'rack-cors'
 gem 'rails-i18n', '~> 5.1'
 # ActiveModel::Serializer implementation and Rails hooks
 gem 'active_model_serializers', '~> 0.10.0'
+# Manage Procfile-based applications
+gem 'foreman'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
