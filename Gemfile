@@ -31,6 +31,8 @@ gem 'rails-i18n', '~> 5.1'
 gem 'active_model_serializers', '~> 0.10.0'
 # Manage Procfile-based applications
 gem 'foreman'
+# A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
+gem 'jwt'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
