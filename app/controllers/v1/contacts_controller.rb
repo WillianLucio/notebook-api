@@ -9,7 +9,13 @@ module V1
       page_size = params[:page].try(:[], :size)
       @contacts = Contact.all.page(page_number).per(page_size)
 
-      render json: @contacts#, methods: :birthdate
+      # CASH CONTROL
+      # expires_in 30.seconds, public: true
+      
+      # if stale?(etag: @contacts)
+      if stale?(last_modified: @contacts[0].updated_at)
+        render json: @contacts#, methods: :birthdate
+      end
       # paginate json: @contacts#, methods: :birthdate
     end
 
